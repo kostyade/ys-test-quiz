@@ -29,7 +29,7 @@
 }
 
 .pixel-man {
-  position: realtive;
+  position: relative;
   top:-190px;
   left:-100px;
   animation: x 1s infinite;
