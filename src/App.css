@@ -9,18 +9,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #fafafa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  color: rgb(3, 3, 39);
 }
 
 @keyframes App-logo-spin {
@@ -29,5 +25,24 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.pixel-man {
+  position: realtive;
+  top:-190px;
+  left:-100px;
+  animation: x 1s infinite;
+  -webkit-animation: x 1s infinite;
+  -moz-animation: x 1s infinite;
+  -o-animation: x 1s infinite;
+}
+
+@keyframes x {
+0%, 50%{
+  box-shadow: 80px 40px 0 0 #a87f58, 90px 40px 0 0 #a87f58, 100px 40px 0 0 #a87f58, 110px 40px 0 0 #a87f58, 120px 40px 0 0 #a87f58, 80px 50px 0 0 #ffecb9, 90px 50px 0 0 #ffecb9, 100px 50px 0 0 #ffecb9, 110px 50px 0 0 #ffecb9, 120px 50px 0 0 #a87f58, 80px 60px 0 0 #ffecb9, 90px 60px 0 0 #ffecb9, 100px 60px 0 0 #ffecb9, 110px 60px 0 0 #ffecb9, 120px 60px 0 0 #a87f58, 80px 70px 0 0 #ffecb9, 90px 70px 0 0 #ffecb9, 100px 70px 0 0 #ffecb9, 110px 70px 0 0 #ffecb9, 120px 70px 0 0 #a87f58, 80px 80px 0 0 #ffecb9, 90px 80px 0 0 #ffecb9, 100px 80px 0 0 #ffecb9, 110px 80px 0 0 #ffecb9, 120px 80px 0 0 #a87f58, 90px 90px 0 0 #03a9f4, 100px 90px 0 0 #03a9f4, 110px 90px 0 0 #03a9f4, 80px 100px 0 0 #03a9f4, 90px 100px 0 0 #03a9f4, 100px 100px 0 0 #03a9f4, 110px 100px 0 0 #03a9f4, 120px 100px 0 0 #03a9f4, 70px 110px 0 0 #03a9f4, 80px 110px 0 0 #03a9f4, 90px 110px 0 0 #03a9f4, 100px 110px 0 0 #9ee07a, 110px 110px 0 0 #03a9f4, 120px 110px 0 0 #03a9f4, 130px 110px 0 0 #03a9f4, 70px 120px 0 0 #03a9f4, 80px 120px 0 0 #03a9f4, 90px 120px 0 0 #9ee07a, 100px 120px 0 0 #9ee07a, 110px 120px 0 0 #9ee07a, 120px 120px 0 0 #03a9f4, 130px 120px 0 0 #03a9f4, 70px 130px 0 0 #ffecb9, 80px 130px 0 0 #03a9f4, 90px 130px 0 0 #03a9f4, 100px 130px 0 0 #9ee07a, 110px 130px 0 0 #03a9f4, 120px 130px 0 0 #03a9f4, 130px 130px 0 0 #ffecb9, 80px 140px 0 0 #03a9f4, 90px 140px 0 0 #03a9f4, 100px 140px 0 0 #03a9f4, 110px 140px 0 0 #03a9f4, 120px 140px 0 0 #03a9f4, 80px 150px 0 0 #607d8b, 90px 150px 0 0 #607d8b, 110px 150px 0 0 #607d8b, 120px 150px 0 0 #607d8b, 80px 160px 0 0 #607d8b, 90px 160px 0 0 #607d8b, 110px 160px 0 0 #607d8b, 120px 160px 0 0 #607d8b, 80px 170px 0 0 #607d8b, 90px 170px 0 0 #607d8b, 110px 170px 0 0 #795548, 120px 170px 0 0 #795548, 130px 170px 0 0 #795548, 70px 180px 0 0 #795548, 80px 180px 0 0 #795548, 90px 180px 0 0 #795548;height: 10px; width: 10px;
+  }
+50.01%, 100%{
+  box-shadow: 80px 40px 0 0 #a87f58, 90px 40px 0 0 #a87f58, 100px 40px 0 0 #a87f58, 110px 40px 0 0 #a87f58, 120px 40px 0 0 #a87f58, 80px 50px 0 0 #a87f58, 90px 50px 0 0 #ffecb9, 100px 50px 0 0 #ffecb9, 110px 50px 0 0 #ffecb9, 120px 50px 0 0 #ffecb9, 80px 60px 0 0 #a87f58, 90px 60px 0 0 #ffecb9, 100px 60px 0 0 #ffecb9, 110px 60px 0 0 #ffecb9, 120px 60px 0 0 #ffecb9, 80px 70px 0 0 #a87f58, 90px 70px 0 0 #ffecb9, 100px 70px 0 0 #ffecb9, 110px 70px 0 0 #ffecb9, 120px 70px 0 0 #ffecb9, 80px 80px 0 0 #a87f58, 90px 80px 0 0 #ffecb9, 100px 80px 0 0 #ffecb9, 110px 80px 0 0 #ffecb9, 120px 80px 0 0 #ffecb9, 90px 90px 0 0 #03a9f4, 100px 90px 0 0 #03a9f4, 110px 90px 0 0 #03a9f4, 80px 100px 0 0 #03a9f4, 90px 100px 0 0 #03a9f4, 100px 100px 0 0 #03a9f4, 110px 100px 0 0 #03a9f4, 120px 100px 0 0 #03a9f4, 70px 110px 0 0 #03a9f4, 80px 110px 0 0 #03a9f4, 90px 110px 0 0 #03a9f4, 100px 110px 0 0 #9ee07a, 110px 110px 0 0 #03a9f4, 120px 110px 0 0 #03a9f4, 130px 110px 0 0 #03a9f4, 70px 120px 0 0 #03a9f4, 80px 120px 0 0 #03a9f4, 90px 120px 0 0 #9ee07a, 100px 120px 0 0 #9ee07a, 110px 120px 0 0 #9ee07a, 120px 120px 0 0 #03a9f4, 130px 120px 0 0 #03a9f4, 70px 130px 0 0 #ffecb9, 80px 130px 0 0 #03a9f4, 90px 130px 0 0 #03a9f4, 100px 130px 0 0 #9ee07a, 110px 130px 0 0 #03a9f4, 120px 130px 0 0 #03a9f4, 130px 130px 0 0 #ffecb9, 80px 140px 0 0 #03a9f4, 90px 140px 0 0 #03a9f4, 100px 140px 0 0 #03a9f4, 110px 140px 0 0 #03a9f4, 120px 140px 0 0 #03a9f4, 80px 150px 0 0 #607d8b, 90px 150px 0 0 #607d8b, 110px 150px 0 0 #607d8b, 120px 150px 0 0 #607d8b, 80px 160px 0 0 #607d8b, 90px 160px 0 0 #607d8b, 110px 160px 0 0 #607d8b, 120px 160px 0 0 #607d8b, 70px 170px 0 0 #795548, 80px 170px 0 0 #795548, 90px 170px 0 0 #795548, 110px 170px 0 0 #607d8b, 120px 170px 0 0 #607d8b, 110px 180px 0 0 #795548, 120px 180px 0 0 #795548, 130px 180px 0 0 #795548;height: 10px; width: 10px;
   }
 }

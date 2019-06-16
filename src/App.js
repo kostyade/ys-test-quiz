@@ -1,23 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { DynamicText } from "./components";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className="pixel-man"></div>
+        <DynamicText
+          strings={["This awwwesome tool will help you to find your path!","...maybe:)"]}
+          nextStringDelay={1000}
+          speed={40}
         >
-          Learn React
-        </a>
+        </DynamicText> 
       </header>
     </div>
   );
