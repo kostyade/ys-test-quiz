@@ -2,18 +2,14 @@ import React from "react";
 import TypeIt from "typeit";
 
 class DynamicText extends React.Component {
-  constructor(props){
-    super(props);
-    this.el = React.createRef();
-  }
   componentDidMount() {
-    new TypeIt(this.el.current, this.props).go();
+    new TypeIt(this.el, this.props).go();
   }
 
   render() {
     return (
       <span
-        ref={this.el}
+        ref={el => this.el = el}
       >
         {this.props.children}
       </span>

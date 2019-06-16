@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './nes.css';
+import './styles/nes.css';
+import './styles/dialog-polyfill.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

@@ -1,0 +1,37 @@
+import React from "react";
+import {RDialog} from "../../components";
+
+class MapInput extends React.Component {
+  constructor() {
+    super();
+    this.state={
+      dialogVisible:false
+    }
+  }
+  componentDidMount() {
+    this.setState({dialogVisible:true})
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <RDialog shown={this.state.dialogVisible}
+          className="nes-dialog is-rounded"
+          id="dialog-rounded"
+        >
+          <form method="dialog">
+            <p className="title">Please note that:</p>
+            <p>
+              Text Input accepts only &#62;&#44;&#60;&#44;v&#44;^&#44;#
+              characters
+            </p>
+            <menu className="dialog-menu">
+              <button className="nes-btn is-primary">Got It</button>
+            </menu>
+          </form>
+        </RDialog>
+      </React.Fragment>
+    );
+  }
+}
+
+export default MapInput;

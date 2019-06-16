@@ -1,21 +1,27 @@
 import React from "react";
+import {Init,MapInput} from "./containers"
 import "./App.css";
-import { DynamicText } from "./components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className="pixel-man"></div>
-        <DynamicText
-          strings={["This awwwesome tool will help you to find your path!","...maybe:)"]}
-          nextStringDelay={1000}
-          speed={40}
-        >
-        </DynamicText> 
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      view: 'init'
+    }
+  }
+  nextViewNavigation=(view)=>{
+    this.setState({view})
+  }
+  render() {
+    return (
+      <div className="App">
+        <div className="App-wrapper">
+        {this.state.view==='init'?<Init nextView="mapInput" nextViewNavigation={this.nextViewNavigation}></Init>:null}
+        {this.state.view==='mapInput'?<MapInput nextViewNavigation={this.nextViewNavigation}></MapInput>:null}
+      </div>
+      </div>
+    );
+  }
 }
 
 export default App;
