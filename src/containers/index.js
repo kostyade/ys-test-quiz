@@ -1,5 +1,5 @@
-import Init from './init';
-import MapInput from './mapInput';
+import Init from './Init';
+import MapInput from './MapInput';
 
 export {
     Init,

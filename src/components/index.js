@@ -1,7 +1,9 @@
-import DynamicText from './dynamic-text';
-import RDialog from './r-dialog';
+import DynamicText from './DynamicText';
+import RDialog from './RDialog';
+import MapInputArea from './MapInputArea'
 
 export {
     DynamicText,
-    RDialog
+    RDialog,
+    MapInputArea
 }
