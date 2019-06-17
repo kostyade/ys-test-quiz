@@ -8,7 +8,7 @@ class DynamicText extends React.Component {
 
   render() {
     return (
-      <span
+      <span className={this.props.className}
         ref={el => this.el = el}
       >
         {this.props.children}
