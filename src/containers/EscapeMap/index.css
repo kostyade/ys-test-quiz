@@ -116,6 +116,12 @@
     border-width: 10px 7px 10px 0;
     border-color: transparent #007bff transparent transparent;
 }
+.linke-link{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 1em;
+}
 
 @keyframes sprite {
  100% {

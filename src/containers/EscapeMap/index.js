@@ -216,6 +216,7 @@ class EscapeMap extends React.Component {
             </li>
             {secondaryAdvices}
           </ul>
+          <a className="linke-link" href="https://www.linkedin.com/in/kostiantyn-degtiarenko-383b9830/" target="_blank" rel="noopener noreferrer"><i className="nes-icon linkedin is-large"></i></a>
         </div>
       </div>
     );
