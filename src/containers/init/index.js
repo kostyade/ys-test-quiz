@@ -22,7 +22,7 @@ class Init extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="pixel-man"></div>
+        <div className="pixel-man" />
         <DynamicText
           strings={[
             "This awwwesome tool will help you to find your path!",
@@ -34,7 +34,7 @@ class Init extends React.Component {
         />
         <button
           type="button"
-          class="nes-btn is-primary"
+          className="nes-btn is-primary"
           style={{
             visibility: this.state.buttonVisible ? "visible" : "hidden",
             marginTop: "50px"
