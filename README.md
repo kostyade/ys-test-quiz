@@ -21,5 +21,6 @@ In the project directory, you can run:
   - Organize styles to either scss or add styled components 
   - Some components can be splitted though it will require state management system
   - External state manager
+  - There're unnecessary render calls, it can be improvement, but for such small app there isn't signifficant performance impact
   - Improve animation with camera movement an smoother transitions
   - There can be issues for some specific cases of non rectangle maps where user is placed outside of map, but generally non rectangle maps are fine and application shouldn't crash.
