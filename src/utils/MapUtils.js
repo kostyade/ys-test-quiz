@@ -1,3 +1,5 @@
+//This service returns dimensions for cases of non rectangle maps and map with directions object
+
 const MapUtils = {
   getDimensions,
   getMap
@@ -23,19 +25,20 @@ class Position {
   }
 }
 class Move {
-  constructor(resultPosition, text, type, duration = 1) {
+  constructor(resultPosition, text="", type, duration = 1) {
     this.duration = duration;
     this.text = text;
-    this.destX = resultPosition.x;
-    this.destY = resultPosition.y;
+    this.positions = [{x:resultPosition.x,y:resultPosition.y}];
     this.direction = resultPosition.direction;
     this.type = type;
   }
   increaseDuration(resultPosition) {
-    this.destX = resultPosition.x;
-    this.destY = resultPosition.y;
+    this.positions.push({x:resultPosition.x,y:resultPosition.y});
     this.duration++;
     this.text = `Move ${this.duration} steps forward`;
+  }
+  get positionsCount(){
+      return this.positions.length;
   }
 }
 
@@ -43,7 +46,7 @@ function getMap(str) {
   let { initPosition, matrix, dimensions } = parseStr(str);
 
   const lastPos = getFinalPosition(initPosition, matrix, dimensions);
-  const {wayMatrix, moves}=getWayDirections(matrix, lastPos);
+  const {wayMatrix, moves}=getWayDirections(matrix, lastPos, initPosition);
 
   return {
       initPosition,
@@ -53,9 +56,15 @@ function getMap(str) {
   }
 }
 
-function getWayDirections(matrix, lastPos) {
+//Method for recovering path from end to finish via position's parent
+function getWayDirections(matrix, lastPos, initPosition) {
   const wayMatrix = [...matrix];
   const moves = [];
+  if(!lastPos){
+    moves.unshift(new Move(initPosition, "Seems you're trapped", "NOWAY", 1));
+    wayMatrix[initPosition.y][initPosition.x] = "*";
+    return { wayMatrix, moves };
+  }
   let parentPos = lastPos.parent;
   let currentMove = null;
   while (parentPos.parent) {
@@ -76,6 +85,7 @@ function getWayDirections(matrix, lastPos) {
 
     parentPos = nextPos;
   }
+  wayMatrix[parentPos.y][parentPos.x] = "*";
   return { wayMatrix, moves };
 }
 
@@ -98,8 +108,9 @@ function parseStr(str) {
   };
 }
 
+//Method for finding exit position with retaining previous position for each step
 function getFinalPosition(initialPosition, matrix, dimensions) {
-  const visitedSet = new Set();
+  const visitedSet = new Set();   //Need to remember visited cells
   const queue = [initialPosition];
   let finishPosition = null;
   visitedSet.add(initialPosition.id);
@@ -114,8 +125,9 @@ function getFinalPosition(initialPosition, matrix, dimensions) {
 
   return finishPosition || null;
 
+  //Trying each possible move from current position and put it in queue.
   function exploreMoves(pos) {
-    const pf = new Position(
+    const pf = new Position(              //position forward
       pos.x + vectorsMap[pos.direction][0],
       pos.y + vectorsMap[pos.direction][1],
       pos.direction,
@@ -146,10 +158,10 @@ function getFinalPosition(initialPosition, matrix, dimensions) {
 
 function getMove(parentPos, currentPos) {
   if (parentPos.x !== currentPos.x || parentPos.y !== currentPos.y) {
-    return new Move(currentPos, "Move Foward", "FORWARD", 1);
+    return new Move(parentPos, "Move Foward", "FORWARD", 1);
   } else {
     const turnText = getTurnText(parentPos.direction, currentPos.direction);
-    return new Move(currentPos, turnText, "TURN", 1);
+    return new Move(parentPos, turnText, "TURN", 1);
   }
 }
 
