@@ -1,6 +1,5 @@
 import React from "react";
 import { RDialog, MapInputArea } from "../../components";
-import MapUtils from "../../utils/MapUtils";
 
 class MapInput extends React.Component {
   constructor() {
@@ -16,17 +15,15 @@ class MapInput extends React.Component {
   showTextArea = () => {
     this.setState({ textAreaVisible: true });
   };
-  submitMap = val => {
-    const matrix = MapUtils.convertString(val);
-    const dimensions = MapUtils.getDimensions(matrix);
-    console.log(matrix, dimensions);
+  handleSubmitMap = val => {
+    this.props.submitMap(val);
   };
   render() {
     return (
       <React.Fragment>
-        {this.state.textAreaVisible ? (
-          <MapInputArea submitMap={this.submitMap} />
-        ) : null}
+        {this.state.textAreaVisible && (
+          <MapInputArea submitMap={this.handleSubmitMap} />
+        )}
         <RDialog
           shown={this.state.dialogVisible}
           className="nes-dialog is-rounded"
