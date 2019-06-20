@@ -1,3 +1,5 @@
+//React wrapper for dialog polyfill
+
 import React from "react";
 import dialogPolyfill from "dialog-polyfill";
 
