@@ -1,0 +1,125 @@
+.EscapeMap-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.EscapeMap-map{
+    min-width:60vw;
+    min-height:600px;
+    width: calc(400px + 24vmin);
+    height: calc(400px + 24vmin);
+    background-color: #ffffe7;
+}
+.EscapeMap-list{
+    flex: 0 0 30vw;
+    min-height: 30vw;
+    padding-top:4em;
+}
+.EscapeMap-title{
+    background-color: #ffffe7;
+}
+.EscapeMap-grid-wrapper{
+    width:424px;
+    height:424px;
+    overflow:hidden;
+    position: relative;
+    margin:auto;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+.EscapeMap-grid{
+    display:grid;
+    position:absolute;
+    margin:auto;
+    grid-template-columns:repeat(6, min-content);
+    grid-template-rows:repeat(6, min-content);
+}
+.tile{
+    background-color: #ffd9a8;
+    width: 70px;
+    height: 70px;
+    border-bottom: 2px solid #d9cd71;
+    border-right: 2px solid #d9cd71;
+}
+.tile-even{
+    background-color: #eeb79e;
+}
+.bush{
+    background-image: url(./bush.png);
+}
+.person{
+    position:absolute;
+    width: 70px;
+    height: 70px;
+    background-image: url(./sprite.png);
+    animation: sprite .5s steps(2) infinite;
+    -webkit-animation: sprite .5s steps(2) infinite;
+    -moz-animation: sprite .5s steps(2) infinite;
+    -o-animation: sprite .5s steps(2) infinite;
+    animation: sprite .5s steps(2) infinite;
+}
+.path{
+    background-color: #fff6a6;
+}
+.path-even{
+    background-color: #faeb7b;
+}
+.empty{
+    visibility: hidden;
+}
+.advice-text-item{
+    margin-bottom:30px; 
+}
+.advice-text_disabled{
+    color: grey;
+}
+.arrow-right{
+    position:absolute;
+    width: 0;
+    height: 0;
+    left:63px;
+    top:25px;
+    border-style: solid;
+    border-width: 10px 0 10px 7px;
+    border-color: transparent transparent transparent #007bff;
+}
+.arrow-top{
+    position:absolute;
+    width: 0;
+    height: 0;
+    left:25px;
+    border-style: solid;
+    border-width: 0 10px 7px 10px;
+    border-color: transparent transparent #007bff transparent;
+}
+.arrow-down{
+    position:absolute;
+    width: 0;
+    height: 0;
+    left:25px;
+    top:63px;
+    border-style: solid;
+    border-width: 7px 10px 0 10px;
+    border-color: #007bff transparent transparent  transparent;
+}
+.arrow-left{
+    position:absolute;
+    width: 0;
+    height: 0;
+    top:25px;
+    left:2px;
+    border-style: solid;
+    border-width: 10px 7px 10px 0;
+    border-color: transparent #007bff transparent transparent;
+}
+
+@keyframes sprite {
+ 100% {
+   background-position: 140px;
+   
+ }
+}
