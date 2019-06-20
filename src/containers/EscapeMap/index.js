@@ -45,6 +45,9 @@ class EscapeMap extends React.Component {
         num: this.state.step.num
       }
     });
+    if(moves[step.num].type==="NOWAY"){
+      return;
+    }
     this.processPosition();
   };
   //Processing all positions inside a move, after process new move until done
@@ -100,7 +103,7 @@ class EscapeMap extends React.Component {
             </span>
           </li>
         );
-      } else if (!this.state.finish) {
+      } else if (!this.state.finish&&this.props.moves[this.state.step.num].type!=="NOWAY") {
         advices.push(
           <li key={i} className="secondary advice-text-item">
             <span className="advice-text_disabled">Finish!</span>
