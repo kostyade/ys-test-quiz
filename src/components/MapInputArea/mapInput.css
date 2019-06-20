@@ -1,5 +1,6 @@
 .area-container{
-    background-color: #fdf7cc
+    background-color: #fdf7cc;
+    min-width: 80vw;
 }
 .area-title{
     background-color: #fdf7cc
