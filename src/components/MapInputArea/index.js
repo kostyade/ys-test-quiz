@@ -8,7 +8,7 @@ class MapInputArea extends React.Component {
     this.state = {
       isValid: true,
       value: "",
-      validationMessage:""
+      validationMessage: ""
     };
   }
   handleChange = e => {
@@ -17,29 +17,31 @@ class MapInputArea extends React.Component {
     this.setState({
       isValid,
       value,
-      validationMessage:"Please match pattern!"
+      validationMessage: "Please match pattern!"
     });
   };
   process = () => {
-    if(this.preValidate()){
+    if (this.preValidate()) {
       this.props.submitMap(this.state.value);
     }
   };
-  preValidate=()=>{
-    if(!this.state.isValid||!this.state.value){
+  preValidate = () => {
+    if (!this.state.isValid || !this.state.value) {
       return false;
     }
-    const pattern=new RegExp("[vV><^]");
-    const personPresent=this.state.value.match(pattern);
-    if(!personPresent){
-      this.setState({ 
-        isValid:false,
-        validationMessage:"Seems you forgot to place yourself!"
+    
+    //Need to validate character presence
+    const pattern = new RegExp("[vV><^]");
+    const personPresent = this.state.value.match(pattern);
+    if (!personPresent) {
+      this.setState({
+        isValid: false,
+        validationMessage: "Seems you forgot to place yourself!"
       });
       return false;
     }
     return true;
-  }
+  };
   render() {
     return (
       <section className="nes-container with-title area-container">
