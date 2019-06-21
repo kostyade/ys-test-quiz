@@ -24,3 +24,8 @@ In the project directory, you can run:
   - There're unnecessary render calls, it can be improvement, but for such small app there isn't signifficant performance impact
   - Improve animation with camera movement an smoother transitions
   - There can be issues for some specific cases of non rectangle maps where user is placed outside of map, but generally non rectangle maps are fine and application shouldn't crash.
+    - Cases of 1x1,1x2,2x1 maps are not covered, but can be with slightly more time
+  
+#### Tested conditions:
+
+  Chrome, Safari, minimum map size 2 X 2
