@@ -16,7 +16,7 @@ In the project directory, you can run:
 #### What's done:
 
   - String parser with proper validations of proper symbols and person presence
-  - Shortest Path (by time, as turns are equal to moves forward) finding logic 
+  - Shortest Path finding logic(by time, as turns are equal to moves forward)
   - Custom sprites animations
   - Simple path tracing animation 
   
@@ -24,11 +24,11 @@ In the project directory, you can run:
 
   - Organize styles to either scss or add styled components 
   - Some components can be splitted though it will require state management system
-  - External state manager
-  - There're unnecessary render calls, it can be improvement, but for such small app there isn't signifficant performance impact
+  - External state manager or react context
+  - There're unnecessary render calls, it can be improved, but for such small app there isn't signifficant performance impact
   - Improve animation with camera movement an smoother transitions
   - There can be issues for some specific cases of non rectangle maps where user is placed outside of map, but generally non rectangle maps are fine and application shouldn't crash.
-    - Cases of 1x1,1x2,2x1 maps are not covered, but can be with slightly more time
+  - Cases of 1x1,1x2,2x1 maps are not covered, but can be with slightly more time
   
 #### Tested conditions:
 
